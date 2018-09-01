@@ -5,6 +5,7 @@ import './App.css';
 import Scroll from '../Components/Scroll';
 import ErrorBoundary from '../Components/ErrorBoundary';
 
+
 class App extends Component {
     constructor() {
         super();
@@ -14,7 +15,7 @@ class App extends Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() { 
         fetch('http://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(users => this.setState({ Robot: users }));
@@ -30,7 +31,7 @@ class App extends Component {
         return !Robot.length ?
             <h1>LOADING.....!</h1> :
             (
-                < div className='tc ' >
+            < div className='tc ' >
                     <h1 className='f2' >ROBOFRIENDS</h1>
                     <SearchBox searchchange={this.onSearch} />
                     <Scroll>
